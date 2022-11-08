@@ -13,7 +13,7 @@ while N>=0:
   
 else: 
   print(-1) #위에 해당 사항이 없다면 -1 출력
-
+```
 
 
 
@@ -39,3 +39,4 @@ for i in range(n):
   for i in answer:
     print(i, end=" ")
   print()
+```
