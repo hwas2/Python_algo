@@ -5,3 +5,5 @@
 ---
 BOJ 알고리즘 풀이
 - [Greedy](https://github.com/hwas2/Python_algo/blob/master/Greedy.md)
+
+- [다이나믹 프로그래밍 DP](https://github.com/hwas2/Python_algo/blob/master/DP.md)
