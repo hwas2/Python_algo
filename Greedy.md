@@ -14,7 +14,7 @@ while N>=0:
 else: 
   print(-1) #위에 해당 사항이 없다면 -1 출력
 ```
-
+  
 
 
 9009번 피보나치 (실버1)
@@ -40,7 +40,7 @@ for i in range(n):
     print(i, end=" ")
   print()
 ```
-
+  
 
 
 1049번 기타줄 (실버4)
@@ -69,7 +69,7 @@ else: #개별 구매가 쌀 때
 
 print(money)
 ```
-
+  
 
 
 13305번 주유소 (실버3)
@@ -88,7 +88,7 @@ for i in range(N-1):
 
 print(total)
 ```
-
+  
 
 
 1541번 잃어버린 괄호 (실버2)
@@ -101,7 +101,7 @@ for i in range(1, len(S)):
   total -= sum(map(int,S[i].split('+'))) #=마다 끊긴 것이므로 total에서 빼준다
 print(total)
 ```
-
+  
 
 
 1026번 보물 (실버4)
@@ -117,7 +117,7 @@ for i in range(N):
   sum+=A[i]*B[i]
 print(sum)
 ```
-
+  
 
 
 11399번 ATM (실버4)
@@ -131,7 +131,7 @@ for i in range(len(Nlist)):
     Nlist[i]+=Nlist[i-1]
 print(sum(Nlist)) #[1, 3, 6, 9, 13] 합 32
 ```
-
+  
 
 
 11047번 동전 0 (실버4)
@@ -152,15 +152,15 @@ for j in money:
     K=K%j #남은 금액
 print(cnt)
 ```
-
+  
 
 
 1439번 뒤집기 (실버5)
-https://www.acmicpc.net/problem/1439
-입력 0001100 출력 (2번 바뀜) 1
-입력 11111 출력 (0번 바뀜) 0
-입력 00000001 출력 (1번 바뀜) 1
-입력 11001100110011000001 출력 (8번 바뀜) 4
+https://www.acmicpc.net/problem/1439  
+입력 0001100 출력 (2번 바뀜) 1  
+입력 11111 출력 (0번 바뀜) 0  
+입력 00000001 출력 (1번 바뀜) 1  
+입력 11001100110011000001 출력 (8번 바뀜) 4  
 "0->1 또는 1->0 으로 바뀌는 횟수를 찾는다"
 ```python
 S=list(map(int,input()))
@@ -178,7 +178,7 @@ if S[-1]==1:
 #print(cntz,cnto)
 print(min(cntz,cnto))
 ```
-
+  
 
 
 1789번 수들의 합 (실버5)
@@ -195,12 +195,12 @@ while total<S:
     break
 print(num)
 ```
-
+  
 
 
 2217번 로프 (실버4)
-https://www.acmicpc.net/problem/2217
-"모두 고르게 중량이 걸리게 되면 사용되는 로프 중 가장 적은 중량 * 사용되는 로프 개수만큼 총 중량을 들어올릴 수 있다." 
+https://www.acmicpc.net/problem/2217  
+"모두 고르게 중량이 걸리게 되면 사용되는 로프 중 가장 적은 중량 * 사용되는 로프 개수만큼 총 중량을 들어올릴 수 있다."   
 따라서 내림차순 정렬을 한 뒤, rope[i]*(i+1) 로 계산하면
 최소 중량 * 로프 개수 를 구할 수 있다.
 ```python
@@ -213,7 +213,7 @@ for j in range(len(rope)):
   rope[j]=(j+1)*rope[j]
 print(max(rope))
 ```
-
+  
 
 
 10610번 30 (실버4)
@@ -228,7 +228,7 @@ elif sum(N)%3 !=0: #3의 배수가 아니면
 else:
   print("".join(map(str,N))) #int형 리스트를 .join으로 꺼내기
 ```
-
+  
 
 
 1543번 문서 검색 (실버4) - 그리디 알고리즘, 브루트포스 알고리즘
@@ -247,7 +247,7 @@ while i <= len(text)-len(searchword):
     i+=1
 print(cnt)
 ```
-
+  
 
 
 1931번 회의실 배정 (실버1)
@@ -273,7 +273,7 @@ for i,j in room:
 
 print(cnt)
 ```
-
+  
 
 
 2864번 5와 6의 차이 (브론즈2)
@@ -299,7 +299,7 @@ else:
       T = T % 10
   print(cnta, cntb, cntc)
 ```
-
+  
 
 
 4796번 캠핑 (브론즈1)
@@ -315,7 +315,7 @@ while True:
   day += min(V%P, L)
   print('Case %d: %d' %(i, day))
 ```
-
+  
 
 
 1946번 신입 사원 (실버1)
@@ -341,7 +341,7 @@ for i in range(T):
       answer += 1
   print(answer) 
 ```
-
+  
 
 ```python
 
