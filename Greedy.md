@@ -1,3 +1,20 @@
+5585번 거스름돈 (브론즈2)
+https://www.acmicpc.net/problem/5585
+```python
+money = 1000 - int(input())
+list=[500,100,50,10,5,1]
+count = 0
+for i in list:
+  if money >= i:
+    count += money//i #같은 동전을 차감해야 할 때 "몫"이 필요하다
+    money -= i*(money//i)
+  else:
+    pass
+print(count)
+```
+
+
+
 2839번 설탕 배달 (실버4)
 https://www.acmicpc.net/problem/2839
 ```python
@@ -40,7 +57,7 @@ for i in range(n):
     print(i, end=" ")
   print()
 ```
-  
+
 
 
 1049번 기타줄 (실버4)
@@ -228,26 +245,7 @@ elif sum(N)%3 !=0: #3의 배수가 아니면
 else:
   print("".join(map(str,N))) #int형 리스트를 .join으로 꺼내기
 ```
-  
 
-
-1543번 문서 검색 (실버4) - 그리디 알고리즘, 브루트포스 알고리즘
-https://www.acmicpc.net/problem/1543
-```python
-#중복이 안 되야 하므로 해당 단어가 등장하면 인덱스를 단어의 길이만큼 증가시켜 준다.
-text = list(input())
-searchword = list(input())
-cnt = 0
-i = 0
-while i <= len(text)-len(searchword):
-  if text[i:i+len(searchword)] == searchword:
-    cnt += 1
-    i+=len(searchword)
-  else:
-    i+=1
-print(cnt)
-```
-  
 
 
 1931번 회의실 배정 (실버1)
@@ -277,6 +275,17 @@ print(cnt)
 
 
 2864번 5와 6의 차이 (브론즈2)
+https://www.acmicpc.net/problem/2864
+```python
+A, B = input().split()
+minab = int(A.replace('6','5')) + int(B.replace('6','5')) #6을 5로 바꾸면 최소
+maxab = int(A.replace('5','6')) + int(B.replace('5','6')) #5를 6으로 바꾸면 최대
+print(minab, maxab)
+```
+
+
+
+10162번 전자레인지 (브론즈3)
 https://www.acmicpc.net/problem/10162
 ```python
 T = int(input())
