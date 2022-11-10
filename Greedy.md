@@ -353,8 +353,28 @@ for i in range(T):
   
 
 
+1339번 단어 수학 (골드4)
+https://www.acmicpc.net/problem/1339
 ```python
+N = int(input())
+cnt = {} #key:value 이용 딕셔너리
+for i in range(N):
+  word = list(input())
+  for j in range(len(word)):
+    if word[j] not in cnt:
+      cnt[word[j]] = 10**(len(word)-j-1)
+    else:
+      cnt[word[j]] += 10**(len(word)-j-1) #같은 문자일 경우 더해줘야 한다
 
+cnt = sorted(cnt.items(), key = lambda x : -x[1])
+#[('A', 10000), ('C', 1010), ('G', 100), ('D', 100), ('E', 10), ('F', 1), ('B', 1)]
+
+sum = 0
+num = 9
+for i in range(len(cnt)):
+  sum += num * cnt[i][1]
+  num -= 1
+print(sum) 
 ```
 
 ```python
