@@ -525,6 +525,30 @@ for i in range(T):
   print(max(sticker[0][n-1], sticker[1][n-1]))
 ```
 
+
+
+2293번 동전 1 (골드5)
+https://www.acmicpc.net/problem/2293
+```python
+n, k = map(int, input().split())
+cost = []
+for i in range(n):
+  cost.append(int(input()))
+
+cnt = [0 for i in range(k+1)]
+cnt[0] = 1
+for i in cost:
+  for j in range(1,k+1):
+    if j-i >= 0:
+      cnt[j] += cnt[j-i]
+#cnt : [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1] 1은 1~10일 때 모두 +1
+#cnt : [1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6] 2는 2, 4, 6, 8, 20일 때 +1
+#cnt : [1, 1, 2, 2, 3, 4, 5, 6, 7, 8, 10] 5는 5, 10일 때 +1
+print(cnt[k])
+```
+
+
+
 ```python
 
 ```
