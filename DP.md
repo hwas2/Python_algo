@@ -549,8 +549,24 @@ print(cnt[k])
 
 
 
+2294번 동전 2 (골드5)
+https://www.acmicpc.net/problem/2294
 ```python
+n, k = map(int, input().split())
+cost = []
+for i in range(n):
+  cost.append(int(input()))
 
+dp = [10001] * (k+1)
+dp[0] = 0
+for c in cost:
+  for i in range(c, k+1):
+    dp[i] = min(dp[i], dp[i-c]+1)
+
+if dp[k] == 10001:
+  print(-1)
+else:
+  print(dp[k])
 ```
 
 ```python
