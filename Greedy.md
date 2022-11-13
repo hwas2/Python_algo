@@ -377,8 +377,26 @@ for i in range(len(cnt)):
 print(sum) 
 ```
 
-```python
 
+
+2437번 저울 (골드2)
+https://www.acmicpc.net/problem/2437  
+예) 1 2 3 4  
+1, 2, 3, 4, 5(1+4), 6(2+4), 7(3+4), 8(1+3+4), 9(2+3+4), 10(1+2+3+4), 11불가능  
+예) 3 1 6 2 7 30 1  
+30을 제외한 수들의 합 = 20, 21불가능
+```python~
+N = int(input())
+Nlist = list(map(int, input().split()))
+Nlist.sort() #[1, 1, 2, 3, 6, 7, 30]
+
+weight = 1
+for i in Nlist:
+  if weight < i:
+    break
+  weight += i #2 3 5 8 14 21
+
+print(weight)
 ```
 
 ```python
