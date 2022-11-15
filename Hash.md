@@ -118,17 +118,33 @@ for i in range(N):
 
 
 1269번 대칭 차집합 (실버4)
-
+https://www.acmicpc.net/problem/1269
 ```python
+numA, numB = map(int, input().split())
+A = set(map(int, input().split()))
+B = set(map(int, input().split()))
+print(len(A - B) + len(B - A))
 
+#len(set1 - set2) + len(set2 - set1)
+#len(set1 | set2)-2*len(set1 & set2)
+#대칭 차집합 set1 ^ set2
 ```
 
 
 
 14425번 문자열 집합 (실버3)
-
+https://www.acmicpc.net/problem/14425
 ```python
-
+N, M = map(int, input().split())
+S = set()
+cnt = 0
+for i in range(N):
+  S.add(str(input()))
+for j in range(M):
+  check = str(input())
+  if check in S:
+    cnt+=1
+print(cnt)
 ```
 
 
