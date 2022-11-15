@@ -65,7 +65,7 @@ https://www.acmicpc.net/problem/1302
 key 기준으로 정렬  
   - sorted(a.key()) : key만 정렬된 값 반환  ['a', 'c', 'e']  
   - sorted(a.items()): 키를 기준으로 정렬하고 key와 value를 튜플로 묶어서 정렬된 값 반환  [('a',2), ('c',4), ('e'.2)]   
-  - sorted(a.items(), key=lambda x: x[0])  
+  - sorted(a.items(), key=lambda x: x[0])
 value를 기준으로 정렬  
   - sorted(a.value())  
   - sorted(a.items(), key=lambda x: x[1])
@@ -91,8 +91,27 @@ print(sorted(maxbook)[0])
 
 
 
+9375번 패션왕 신해빈 (실버3)
+https://www.acmicpc.net/problem/9375
 ```python
+import sys
+input = sys.stdin.readline
 
+N = int(input())
+for i in range(N):
+  num = int(input())
+  cl = {}
+  for j in range(num):
+    var = list(input().split())[1]
+    if var in cl:
+      cl[var] += 1
+    else:
+      cl[var] = 1
+
+  cnt = 1
+  for k in cl.values():
+    cnt*=(k+1)
+  print(cnt-1)
 ```
 
 
