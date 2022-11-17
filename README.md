@@ -11,3 +11,5 @@ BOJ 알고리즘 풀이
 - [브루트포스](https://github.com/hwas2/Python_algo/blob/master/BruteForce.md)
 
 - [해시를 사용한 집합과 맵](https://github.com/hwas2/Python_algo/blob/master/Hash.md)
+
+- [자료구조](https://github.com/hwas2/Python_algo/blob/master/DataStructures.md)
