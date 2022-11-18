@@ -1,4 +1,25 @@
-7/19 (화) 10828번 스택 (실버4)
+10773번 제로 (실버4) - 구현, 자료 구조, 스택
+https://www.acmicpc.net/problem/10773
+```
+" su.remove(su[-1])은 su의 마지막 원소를 제거하라는 뜻이 아닙니다.
+su[-1]이란 원소를 앞에서부터 찾아서, 지우는 겁니다. "
+ => remove 대신 pop으로 쓰기
+```
+```python
+K=int(input())
+num=[]
+for i in range(K):
+  new=int(input())
+  if new != 0:
+    num.append(new)
+  else:
+    num.pop()
+print(sum(num))
+```
+
+
+
+10828번 스택 (실버4) - 자료 구조, 스택  
 https://www.acmicpc.net/problem/10828  
 - push X: 정수 X를 스택에 넣는 연산이다.  
 - pop: 스택에서 가장 위에 있는 정수를 빼고, 그 수를 출력한다. 만약 스택에 들어있는 정수가 없는 경우에는 -1을 출력한다.  
@@ -37,7 +58,7 @@ for i in range(int(input())):
 
 
 
-7/20 (수) 10845번 큐 (실버4)
+10845번 큐 (실버4) - 자료 구조, 큐  
 https://www.acmicpc.net/problem/10845  
 - push X: 정수 X를 큐에 넣는 연산이다.  
 - pop: 큐에서 가장 앞에 있는 정수를 빼고, 그 수를 출력한다. 만약 큐에 들어있는 정수가 없는 경우에는 -1을 출력한다.  
@@ -84,7 +105,7 @@ for i in range(int(input())):
 
 
 
-7/21 (목) 10866번 덱 (실버4)
+10866번 덱 (실버4) - 자료 구조, 덱  
 https://www.acmicpc.net/problem/10866  
 - push_front X: 정수 X를 덱의 앞에 넣는다.  
 - push_back X: 정수 X를 덱의 뒤에 넣는다.  
@@ -142,6 +163,87 @@ for i in range(int(input())):
 
 
 
+9012번 괄호 (실버4) - 자료 구조, 문자열, 스택  
+https://www.acmicpc.net/problem/9012
+```
+리스트는 .remove로 제거
+문자열은 .replace('제거하고싶은문자열','')
+```
+```python
+T=int(input())
+for i in range(T):
+  PS=input()
+  if len(PS)%2 == 1:
+    print("NO")
+  else:
+    for j in range(int(len(PS)/2)):
+      PS = PS.replace('()','')
+    if len(PS)==0:
+      print("YES")
+    else:
+      print("NO")
+```
+
+
+
+4949번 균형잡힌 세상 (실버4) - 자료 구조, 문자열, 스택  
+https://www.acmicpc.net/problem/4949
+```python
+while True:
+  N=input()
+  if N == '.':
+    break
+  else:
+    bracket=[]
+    for i in range(len(N)):
+      if N[i] in ['(',')','[',']']:
+        bracket.append(N[i])
+    bstr="".join(bracket)
+    for j in range(int(len(bstr)/2)):
+      bstr = bstr.replace('()','')
+      bstr = bstr.replace('[]','')
+    if len(bstr)==0:
+      print("yes")
+    else:
+      print("no")
+```
+
+
+
+11866번 요세푸스 문제0 (실버5) - 구현, 자료 구조, 큐  
+https://www.acmicpc.net/problem/11866
+```python
+N,K = map(int, input().split())
+circle=[i for i in range(1,N+1)] #[1, 2, 3, 4, 5, 6, 7]
+osps=[]
+newK = 0
+for i in range(N):
+  newK = (newK + K -1) % len(circle)
+  #반복문 대신 나머지로 쓸 수 있다, 인덱스라 -1 붙여줌
+  #원래 N보다 클 때 while 문 돌려서 N을 빼주려고 했는데 나머지가 더 좋은 방법!
+  osps.append(circle.pop(newK))
+  print(circle)
+  print(osps)
+print("<",", ".join(map(str,osps)),">", sep="")
+```
+
+
+
+카드2
+```python
+
+```
+
+
+
+숫자 카드
+```python
+
+```
+
+
+
+수 찾기
 ```python
 
 ```
@@ -153,19 +255,3 @@ for i in range(int(input())):
 ```
 
 
-
-```python
-
-```
-
-
-
-```python
-
-```
-
-
-
-```python
-
-```
