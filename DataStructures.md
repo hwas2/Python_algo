@@ -229,9 +229,32 @@ print("<",", ".join(map(str,osps)),">", sep="")
 
 
 
-카드2
+2164번 카드2 (실버4) - 자료 구조, 큐 
+https://www.acmicpc.net/problem/2164
+```
+list의 pop과 append : 시간 초과 -> deque 사용 
+popleft()
+- 큐의 맨 왼쪽의 element를 삭제하고 반환
+- element가 없으면, IndexError가 발생한다
+```
 ```python
-
+from collections import deque
+N=int(input())
+card = deque(i for i in range(1,N+1))
+while len(card) > 1:
+    card.popleft()
+    card.append(card.popleft())
+    #print(card)
+print(card[0])
+```
+```
+6 
+deque([3, 4, 5, 6, 2]) 
+deque([5, 6, 2, 4]) 
+deque([2, 4, 6]) 
+deque([6, 4]) 
+deque([4]) 
+4
 ```
 
 
