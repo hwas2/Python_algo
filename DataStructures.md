@@ -259,16 +259,86 @@ deque([4])
 
 
 
-숫자 카드
+10815번 숫자 카드 (실버5) - 자료 구조, 정렬, 이분 탐색  
+https://www.acmicpc.net/problem/10815
+```
+- 순서와 중복에 대한 특성을 사용하지 않는다면 list보다 set이 시간 복잡도가 적음
+ - list는 O(n), set은 O(1)
+```
 ```python
+import sys
+input = sys.stdin.readline
+N = int(input())
+Nlist = set(map(int, input().split()))
+M = int(input())
+Mlist = list(map(int, input().split()))
+for i in Mlist:
+  if i in Nlist:
+    print(1, end=" ")
+  else:
+    print(0, end=" ")
+```
+```python
+#이분 탐색 풀이
+import sys
 
+n = int(input())
+card = list(map(int, sys.stdin.readline().split()))
+m = int(input())
+check = list(map(int, sys.stdin.readline().split()))
+
+card.sort()
+
+def binary_search(array, target, start, end):
+    while start <= end:
+        mid = (start + end) // 2
+
+        if array[mid] == target:
+            return mid
+        elif array[mid] > target:
+            end = mid - 1
+        else:
+            start = mid + 1
+    return None
+
+
+for i in range(m):
+    if binary_search(card, check[i], 0, n - 1) is not None:
+        print(1, end=' ')
+    else:
+        print(0, end=' ')
 ```
 
 
 
-수 찾기
+1920번 수 찾기 (실버4) - 자료 구조, 정렬, 이분 탐색  
+https://www.acmicpc.net/problem/1920
+```
+def binary_search(array, target, start, end):
+def binary_search(탐색하려는 배열, 찾고자 하는 수, 시작점, 끝점):
+```
 ```python
+import sys
+input = sys.stdin.readline
+N=int(input())
+Nlist=list(map(int,input().split()))
+Nlist.sort()
+M=int(input())
+Mlist=list(map(int,input().split()))
 
+def binary_search(array, target, start, end):
+    while start <= end:
+        mid = (start + end) // 2
+        if array[mid] == target: # 찾은 경우 중간점 인덱스 반환
+            return 1
+        elif array[mid] > target: # 중간점의 값보다 찾고자 하는 값이 작은 경우 왼쪽 확인
+            end = mid - 1
+        else:
+            start = mid + 1 # 중간점의 값보다 찾고자 하는 값이 작은 경우 오른쪽 확인
+    return 0
+    
+for i in Mlist:
+  print(binary_search(Nlist,i, 0, N-1))
 ```
 
 
